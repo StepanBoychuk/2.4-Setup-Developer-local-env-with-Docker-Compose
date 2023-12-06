@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     ports: 
-    - ${DB_PORT}:${DB_PORT}
+    - '5432:${DB_PORT}'
     networks:
     - local-network
   
@@ -20,7 +20,7 @@ services:
     environment:
       REDIS_URL: ${REDIS_URL}
     ports:
-    - ${REDIS_PORT}:${REDIS_PORT}
+    - '6379:${REDIS_PORT}'
     networks:
     - local-network
 
@@ -31,7 +31,7 @@ services:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
     ports:
-    - ${RABBITMQ_PORT}:${RABBITMQ_PORT}
+    - '5672:${RABBITMQ_PORT}'
     networks:
     - local-network
 
