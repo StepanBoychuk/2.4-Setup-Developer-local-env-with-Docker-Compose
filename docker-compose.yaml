@@ -18,7 +18,7 @@ services:
     image: redis:latest
     container_name: redis_container
     environment:
-      REDIS_URL: ${REDIS_URL}
+      REDIS_URL: ${REDIS_URL}:${REDIS_PORT}
     ports:
     - '6379:${REDIS_PORT}'
     networks:
