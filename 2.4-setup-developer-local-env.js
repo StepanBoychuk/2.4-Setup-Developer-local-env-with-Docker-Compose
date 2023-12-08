@@ -14,7 +14,7 @@ const db_client = new pg.Client({
 });
 
 const redis_client =  redis.createClient({
-    url: process.env.REDIS_URL
+    url: `${process.env.REDIS_URL}:${process.env.REDIS_PORT}`
 }).on('error', err => console.log('Redis Client Error', err))
 
 const connectToRabbitMQ = async () => {
